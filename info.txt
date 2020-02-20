@@ -1,0 +1,7 @@
+24 pola na kole: 360dg/24 = 15dg
+
+zrobic przycisk i liczyc dlugo jest trzymany -> tak mocno kolo się obraca
+
+ilosc graczy 2-4
+
+tablica z hasłami
