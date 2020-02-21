@@ -7,16 +7,20 @@ html {
 }
 .wheel {
     position: fixed;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 6.5%;
+    left: 32.5%;
+    transform: rotate(0);
     width: 35%;
     height: auto;
+    display:block;
 }
-
-i{
-    position: center;
-    top: 50%;
-    left: 50%;
-
+i {
+    position: fixed;
+    font-size: 50px;
+    top:2.5%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    display:block;
+    transform: rotate(135deg);
+    color: burlywood;
 }
