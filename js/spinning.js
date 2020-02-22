@@ -5,19 +5,21 @@ var spinPower = 0;
 var noOfField = 0;
 
 
+
 function buttonPress(){
      buttonPressTime = new Date();    
 }
 
 function buttonRelease(){
      buttonReleaseTime = new Date();
-     console.log(buttonReleaseTime-buttonPressTime);                     //That get us time in ms between button click and push
+     console.log(buttonReleaseTime-buttonPressTime);                     //That gets us time in ms between button click and release
      spins();
 }
 
-$('.wheel').mousedown(buttonPress);
-$('.wheel').mouseup(buttonRelease);
- 
+
+//$('.wheel').mousedown(buttonPress);
+//$('.wheel').mouseup(buttonRelease);
+
 var projectedAngle = 0;
 
 function spins(){
@@ -28,7 +30,7 @@ function spins(){
     noOfField = noOfField + spinPower;
     console.log(noOfField,1111)
     console.log('spinpower +rnd:',spinPower);
-    projectedAngle = spinPower * 15 + currentAngle;                     //projected angle is calculated + added current angle (to prevent moving in wrong direction in the worst case scenario)
+    projectedAngle = spinPower * 15 + currentAngle;                     //projected angle is calculated + added current angle (eg to prevent moving in wrong direction in the worst case scenario)
     spinTheWheel();
 }
 
@@ -36,7 +38,6 @@ function randomization(){                                               //random
     var random = Math.floor(Math.random() * 4) + 1;
     console.log('rnd',random);
     return random
-
     
 }
         
@@ -67,31 +68,63 @@ if (noOfField>24){
     noOfField =  noOfField % 24;
 }
 
- switch(noOfField+1){
-    case 1: window.alert("bankrut"); break;
-    case 2: window.alert("9000"); break;
-    case 3: window.alert("5000"); break;
-    case 4:  window.alert("8000"); break;
-    case 5:  window.alert("7000"); break;
-    case 6:  window.alert("15000"); break;
-    case 7:  window.alert("bankrut"); break;
-    case 8:  window.alert("6000"); break;
-    case 9:  window.alert("9000"); break;
-    case 10:  window.alert("5000"); break;
-    case 11:  window.alert("7000"); break;
-    case 12:  window.alert("6000"); break;
-    case 13:  window.alert("10000"); break;
-    case 14:  window.alert("3000"); break;
-    case 15:  window.alert("8000"); break;
-    case 16:  window.alert("15000"); break;
-    case 17:  window.alert("3000"); break;
-    case 18:  window.alert("9000"); break;
-    case 19:  window.alert("lose a turn"); break;
-    case 20:  window.alert("7000"); break;
-    case 21:  window.alert("10000"); break;
-    case 22:  window.alert("6000"); break;
-    case 23:  window.alert("8000"); break;
-    case 24:  window.alert("3000"); break;
+switch(noOfField+1){
+    case 25: console.log("bankrut"); break;
+    case 2: console.log("9000"); break;
+    case 3: console.log("5000"); break;
+    case 4:  console.log("8000"); break;
+    case 5:  console.log("7000"); break;
+    case 6:  console.log("15000"); break;
+    case 7:  console.log("bankrut"); break;
+    case 8:  console.log("6000"); break;
+    case 9:  console.log("9000"); break;
+    case 10:  console.log("5000"); break;
+    case 11:  console.log("7000"); break;
+    case 12:  console.log("6000"); break;
+    case 13:  console.log("10000"); break;
+    case 14:  console.log("3000"); break;
+    case 15:  console.log("8000"); break;
+    case 16:  console.log("15000"); break;
+    case 17:  console.log("3000"); break;
+    case 18:  console.log("9000"); break;
+    case 19:  console.log("lose a turn"); break;
+    case 20:  console.log("7000"); break;
+    case 21:  console.log("10000"); break;
+    case 22:  console.log("6000"); break;
+    case 23:  console.log("8000"); break;
+    case 24:  console.log("3000"); break;
     }
 }  
-    
+
+
+
+window.addEventListener('load', function(){
+
+	var box1 = document.getElementById('el')
+	var statusdiv = document.getElementById('statusdiv')
+
+	var detecttouch = !!('ontouchstart' in window) || !!('ontouchstart' in document.documentElement) || !!window.ontouchstart || !!window.Touch || !!window.onmsgesturechange || (window.DocumentTouch && window.document instanceof window.DocumentTouch)
+	var ismousedown = false
+	
+	box1.addEventListener('touchstart', function(e){
+		var touchobj = e.changedTouches[0] // reference first touch point (ie: first finger)
+		statusdiv.innerHTML = 'Status: touchstart<br />' 
+		e.preventDefault()
+	}, false)
+	
+	box1.addEventListener('touchend', function(e){
+		var touchobj = e.changedTouches[0] // reference first touch point (ie: first finger)
+		statusdiv.innerHTML = 'Status: touchend<br /> '
+		e.preventDefault()
+	}, false)
+	
+	if (!detecttouch){
+
+        $('.wheel').mousedown(buttonPress);
+        $('.wheel').mouseup(buttonRelease);
+        console.log('desktop');
+		
+	}
+
+}, false)
+
