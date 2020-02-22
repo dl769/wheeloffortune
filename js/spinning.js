@@ -56,8 +56,8 @@ function spinTheWheel(){
         currentAngle = projectedAngle;
         //
         setTimeout(function() {
-            fieldRunner();; // po 2s
-        }, 2000);
+            fieldRunner();; // after 0.85s
+        }, 850);
         
 
  }
@@ -99,34 +99,46 @@ switch(noOfField+1){
 
 
 window.addEventListener('load', function(){
+    
+    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    console.log(isChrome,'isChrome?')
 
 	var box1 = document.getElementById('el')
 	var statusdiv = document.getElementById('statusdiv')
 
 	var detecttouch = !!('ontouchstart' in window) || !!('ontouchstart' in document.documentElement) || !!window.ontouchstart || !!window.Touch || !!window.onmsgesturechange || (window.DocumentTouch && window.document instanceof window.DocumentTouch)
 	var ismousedown = false
-	
+    
+    //touchscreen support
 	box1.addEventListener('touchstart', function(e){
-		var touchobj = e.changedTouches[0] // reference first touch point (ie: first finger)
         statusdiv.innerHTML = 'Status: touchstart<br />' 
         buttonPress();
 		e.preventDefault()
 	}, false)
 	
 	box1.addEventListener('touchend', function(e){
-		var touchobj = e.changedTouches[0] // reference first touch point (ie: first finger)
         statusdiv.innerHTML = 'Status: touchend<br /> '
         buttonRelease();
 		e.preventDefault()
-	}, false)
-	
-	if (!detecttouch){
+    }, false)
+    
+    //chromeSupport
+	if(isChrome){                       
+        console.log('chrome');
+            $('.wheel').mousedown(buttonPress);
+            $('.wheel').mouseup(buttonRelease);
+    }
+    else{
 
+    if (!detecttouch){
+
+       console.log('notchrome')
         $('.wheel').mousedown(buttonPress);
         $('.wheel').mouseup(buttonRelease);
         console.log('desktop');
-		
-	}
+        }
+    }
+
 
 }, false)
 
