@@ -108,13 +108,15 @@ window.addEventListener('load', function(){
 	
 	box1.addEventListener('touchstart', function(e){
 		var touchobj = e.changedTouches[0] // reference first touch point (ie: first finger)
-		statusdiv.innerHTML = 'Status: touchstart<br />' 
+        statusdiv.innerHTML = 'Status: touchstart<br />' 
+        buttonPress();
 		e.preventDefault()
 	}, false)
 	
 	box1.addEventListener('touchend', function(e){
 		var touchobj = e.changedTouches[0] // reference first touch point (ie: first finger)
-		statusdiv.innerHTML = 'Status: touchend<br /> '
+        statusdiv.innerHTML = 'Status: touchend<br /> '
+        buttonRelease();
 		e.preventDefault()
 	}, false)
 	
