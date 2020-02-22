@@ -103,7 +103,7 @@ window.addEventListener('load', function(){
     var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
     console.log(isChrome,'isChrome?')
 
-	var box1 = document.getElementById('el')
+	var box1 = document.getElementById('box1')
 	var statusdiv = document.getElementById('statusdiv')
 
 	var detecttouch = !!('ontouchstart' in window) || !!('ontouchstart' in document.documentElement) || !!window.ontouchstart || !!window.Touch || !!window.onmsgesturechange || (window.DocumentTouch && window.document instanceof window.DocumentTouch)
