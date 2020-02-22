@@ -14,7 +14,7 @@ html {
     height: auto;
     display:block;
 }
-i {
+#pointer{
     position: fixed;
     font-size: 50px;
     top:2.5%;
@@ -23,4 +23,9 @@ i {
     display:block;
     transform: rotate(135deg);
     color: burlywood;
+}
+#roller{
+  width: 155%;
+    height: auto;
+    color: grey;
 }
