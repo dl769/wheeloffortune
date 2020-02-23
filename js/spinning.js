@@ -16,10 +16,6 @@ function buttonRelease(){
      spins();
 }
 
-
-//$('.wheel').mousedown(buttonPress);
-//$('.wheel').mouseup(buttonRelease);
-
 var projectedAngle = 0;
 
 function spins(){
@@ -69,35 +65,51 @@ if (noOfField>24){
 }
 
 switch(noOfField+1){
-    case 25: console.log("bankrut"); break;
-    case 2: console.log("9000"); break;
-    case 3: console.log("5000"); break;
-    case 4:  console.log("8000"); break;
-    case 5:  console.log("7000"); break;
-    case 6:  console.log("15000"); break;
-    case 7:  console.log("bankrut"); break;
-    case 8:  console.log("6000"); break;
-    case 9:  console.log("9000"); break;
-    case 10:  console.log("5000"); break;
-    case 11:  console.log("7000"); break;
-    case 12:  console.log("6000"); break;
-    case 13:  console.log("10000"); break;
-    case 14:  console.log("3000"); break;
-    case 15:  console.log("8000"); break;
-    case 16:  console.log("15000"); break;
-    case 17:  console.log("3000"); break;
-    case 18:  console.log("9000"); break;
-    case 19:  console.log("lose a turn"); break;
-    case 20:  console.log("7000"); break;
-    case 21:  console.log("10000"); break;
-    case 22:  console.log("6000"); break;
-    case 23:  console.log("8000"); break;
-    case 24:  console.log("3000"); break;
-    }
+    case 25: console.log("bankrut"); bankruptcy(); break;
+    case 2: console.log("9000"); addMoney(9000); break;
+    case 3: console.log("5000"); addMoney(5000); break;
+    case 4:  console.log("8000"); addMoney(8000); break;
+    case 5:  console.log("7000"); addMoney(7000); break;
+    case 6:  console.log("15000"); addMoney(15000); break;
+    case 7:  console.log("bankrut"); bankruptcy(); break;
+    case 8:  console.log("6000"); addMoney(6000); break;
+    case 9:  console.log("9000"); addMoney(9000); break;
+    case 10:  console.log("5000"); addMoney(5000); break;
+    case 11:  console.log("7000"); addMoney(7000); break;
+    case 12:  console.log("6000"); addMoney(6000); break;
+    case 13:  console.log("10000"); addMoney(10000); break;
+    case 14:  console.log("3000"); addMoney(3000); break;
+    case 15:  console.log("8000"); addMoney(8000); break;
+    case 16:  console.log("15000"); addMoney(15000); break;
+    case 17:  console.log("3000"); addMoney(3000); break;
+    case 18:  console.log("9000"); addMoney(9000); break;
+    case 19:  console.log("lose a turn"); nextPlayer(); break;
+    case 20:  console.log("7000"); addMoney(7000); break;
+    case 21:  console.log("10000"); addMoney(10000); break;
+    case 22:  console.log("6000"); addMoney(6000); break;
+    case 23:  console.log("8000"); addMoney(8000); break;
+    case 24:  console.log("3000"); addMoney(3000); break;
+    }  console.log('check,',player.face,player.name);
 }  
+
+function addMoney(prize){
+    player.cash = player.cash + prize;
+    console.log(player);
+}
+
+function bankruptcy(){
+    player.cash = 0;
+}
+
+function nextPlayer(){
+    ////TODO
+}
 
 
 window.addEventListener('load', function(){
+    var popUpList = $('<div><input type="radio">A<br><input type="radio">B<br><input type="radio">C</div>');
+
+
     
     var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
     console.log(isChrome,'isChrome?')
@@ -112,9 +124,7 @@ if(isMobile){
     $('#rollerH').html('<i class="far fa-life-ring fa-5x" id="roller">');
 }
 
-
 	var roll = document.getElementById('rollerH')
-	var statusdiv = document.getElementById('statusdiv')
 
 	var detecttouch = !!('ontouchstart' in window) || !!('ontouchstart' in document.documentElement) || !!window.ontouchstart || !!window.Touch || !!window.onmsgesturechange || (window.DocumentTouch && window.document instanceof window.DocumentTouch)
 	var ismousedown = false
@@ -131,7 +141,7 @@ if(isMobile){
 		e.preventDefault()
     }, false)
     
-    //chromeSupport
+    //chrome support
 	if(isChrome){                       
         console.log('chrome');
             $('.wheel').mousedown(buttonPress);
@@ -151,3 +161,43 @@ if(isMobile){
 
 }, false)
 
+var player = {
+    name: '',
+    gender: '',
+    face: '',
+    cash: 0,
+}
+
+
+function playerOneBio(){
+    console.log('gotowe,',player.face,player.name);
+
+    if (document.getElementById('1').checked) {
+    player.face = "avatars/face1.png"
+
+    }   else if (document.getElementById('2').checked) {
+    player.face = "avatars/face2.png"
+
+    }   else if (document.getElementById('3').checked) {
+    player.face = "avatars/face3.png"
+
+    }   else if (document.getElementById('4').checked) {
+    player.face = "avatars/face4.png"
+   
+    }else if (document.getElementById('5').checked) {
+    player.face = "avatars/face5.png"
+   
+    }else if (document.getElementById('6').checked) {
+    player.face = "avatars/face6.png"
+
+    }else if (document.getElementById('7').checked) {
+    player.face = "avatars/face7.png"
+
+    }else if (document.getElementById('8').checked) {
+    player.face = "avatars/face8.png"
+    }
+    console.log('gotowe,',player.face,player.name);
+}
+function as(){
+    window.alert('dupa');
+}

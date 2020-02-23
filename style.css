@@ -13,19 +13,57 @@ html {
     width: 35%;
     height: auto;
     display:block;
+    
 }
 #pointer{
     position: fixed;
     font-size: 50px;
     top:2.5%;
-    left: 49%;
+    left: 48.5%;
     transform: translate(-50%, -50%);
     display:block;
     transform: rotate(135deg);
     color: burlywood;
 }
-#roller{
+#rollerH{
   width: 155%;
     height: auto;
     color: grey;
+}
+table{
+  position: absolute;
+  width: 20%;
+  left: 34.5%;
+  top: 10%;
+  background-color: grey;
+  border-style: ridge;
+  border-color: khaki;
+  border-width: 15px;
+}
+/* HIDE RADIO */
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  outline: 4px solid #f00;
+}
+
+#bb:hover {
+  color: yellow;
+}
+.surname{
+  background-color: transparent;
+  border: solid;
+  font-size: 12px;
+
 }

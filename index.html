@@ -13,9 +13,11 @@
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
 
+  <div id='cont'>
   <img class=wheel id=el src=Wheel1.png>
  
   <i class="fas fa-location-arrow" id='pointer'></i>
+</div>
 
 
     <h3 id='rollerH'></h3>
@@ -25,7 +27,39 @@
 </head>
 
 <body>
+
+    <div id ='starter'>
+
+      <table>
+        <tr>
+          <td>  <label><input type="radio" name="face" id="1"><img src="avatars/face1.png"/>  </label></td>
+          <td>  <label><input type="radio" name="face" id="2"><img src="avatars/face2.png"/>  </label></td>
+          <td>  <label><input type="radio" name="face" id="3"><img src="avatars/face3.png"/>  </label></td>
+          <td>  <label><input type="radio" name="face" id="4"><img src="avatars/face4.png"/>  </label></td>
+          
+        </tr>
+        <tr>
+          <td>  <label><input type="radio" name="face" id="5"><img src="avatars/face5.png"/>  </label></td>
+          <td>  <label><input type="radio" name="face" id="6"><img src="avatars/face6.png"/>  </label></td>
+          <td>  <label><input type="radio" name="face" id="7"><img src="avatars/face7.png"/>  </label></td>
+          <td>  <label><input type="radio" name="face" id="8"><img src="avatars/face8.png"/>  </label></td>
+        </tr>
+        <tr>
+          <td>  <img src="avatars/face10.png"/>  </td>  <td>  <input type="text" class="surname" value="P">  </td>
+          <td>  <center><i class="fas fa-arrow-alt-circle-right fa-5x" id='bb' onclick="pop();"></i></center></td>
+                  
+        </tr>
+
+      </table> 
+
+      <button onclick="removeLandingPage()">Try it</button>
+    </div>
+
+
+
+
   <script src="js/script.js"></script>
   <script src="js/spinning.js"></script>
+  <script>playerOneBio();</script>
 </body>
 </html>
