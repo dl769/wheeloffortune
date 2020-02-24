@@ -4,7 +4,7 @@ var buttonReleaseTime = 0;
 var spinPower = 0;
 var noOfField = 0;
 var currentPlayer = 1;
-
+var properLetters =0; //variable used in comparing length of answer with proper letters
 
 function buttonPress(){
      buttonPressTime = new Date();    
@@ -95,24 +95,38 @@ switch(noOfField+1){
 }  
 
 function checkAnswer(){
-    
-    for (var i=0; i<lengthOfTheWord; i++){
-        if (answer.toUpperCase() === words[draw][i] ) {
-            $('#'+i+'l').html(words[draw][i]);
-        
-                
-                
-                                                                                                        //     $('#'+i+'l').html(words[draw][i+1]);    
-                                                                                                        // $('#'+i+'l').css("background-color","#efe4b0");
-                            
-            return true;     //TODOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
-        }
+    var isTheLetterInAnswer =0;
+    if(answer.toUpperCase() === words[draw]) {                                      //IF final answer is correct...
+        appendProperAnswer();
+        return 0;
     }
-    window.alert('Wrong letter! Next player\'s turn');
+
+    if(answer.length>1) {                                                           //IF final answer is incorrect...
+        window.alert('Wrong answer! Next player\'s turn'); 
+        nextPlayer(); 
+        return 0;
+    }
+    
+    for (var i=0; i<lengthOfTheWord; i++){                      
+        for (var i=0; i<lengthOfTheWord; i++){
+
+            if (answer.toUpperCase() === words[draw][i] ) {                         //If letter is in final word then show all boxes with particular letter
+                i=i+1;
+                $('#'+i+'l').html(answer.toUpperCase());
+                $('#'+i+'l').css("background-color","#efe4b0");
+                i=i-1;
+                isTheLetterInAnswer = 1;
+                properLetters = properLetters+ 1;
+        }
+        if(properLetters == words[draw].length) window.alert('victory'); //todo Roundwon
+    }
+       if(isTheLetterInAnswer == 1) return true;                                     //preventing returning true on letters that are not in answer
+    }
+
+    window.alert('Wrong letter! Next player\'s turn');                              //IF letter is not in final answer (none of above conditions is fulfilled)...
     nextPlayer();
    
 }
-
 
 function addMoney(prize){
     console.log(currentPlayer,'crrrrrrrrrrrrrrrrrrrrr')
