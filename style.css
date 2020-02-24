@@ -30,7 +30,7 @@ html {
     height: auto;
     color: grey;
 }
-table{
+#starterTable{
   position: absolute;
   width: 20%;
   left: 34.5%;
@@ -66,4 +66,62 @@ table{
   border: solid;
   font-size: 12px;
 
+}
+#rcorners1 {
+
+  font-size: 30px;
+  text-align: center;
+}
+#displayed {
+  display: block;
+  margin-left: auto;
+  margin-right: auto }
+#money1{
+  font: sans-serif;
+  background-color:#00cc00;
+  border-radius: 50px; 
+
+}
+#money2{
+  font: sans-serif;
+  background-color: #00cc00;
+  border-radius: 50px; 
+
+}
+#player1stats{
+  position: fixed;
+  top: 40%;
+  left: 23%;
+}
+#player2stats{
+  position: fixed;
+  top: 40%;
+  left: 69%;
+}
+#wordBlocks{
+    position: fixed;
+  bottom: 0;
+  margin-left: 225px;
+  margin-bottom: 45px;
+    width: 100%;
+}
+.letters{
+  border-radius: 5px;
+  background: #a2a2a2 ; /* background: #efe4b0; / */
+  font-size: 40px;
+  height: 56px;
+  width: 75px;
+  text-align: center;
+}
+.letterd{
+  border-radius: 5px;
+   background: #efe4b0;
+  font-size: 40px;
+  height: 56px;
+  width: 75px;
+  text-align: center;
+}
+#playernametext{
+  background: #ffcc99 ;
+  border-radius: 25px;
 }
