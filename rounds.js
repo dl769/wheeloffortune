@@ -4,8 +4,9 @@ function nextRound(){
     roundCounter++;
     
     ///
-    properLetters =0; 
+    properLetters =0; console.log('SDX',usedLetters)
     usedLetters = [];
+    noOfSpaces = 0;console.log('SDX',usedLetters)
     ///
 
     $('#roundNoText').html('&nbspRound&nbsp'+roundCounter+'&nbspof 4&nbsp');

@@ -121,7 +121,7 @@ function checkAnswer(){
                     properLetters = properLetters+ 1;
                     usedLetters.push(answer);
                     console.log(usedLetters,'uzyteliterkii')
-            }
+                }
             if(properLetters == words[draw].length) roundWon();             //todo Roundwon // toDO 3x AAA in ala wins the game :( 
         }
         if(isTheLetterInAnswer == 1) return true;                                     //preventing returning true on letters that are not in answer
@@ -152,7 +152,7 @@ function roundWon(){
     if(roundCounter<4) {
         nextRound();
     } else endOfTheGame();
-    
+
 }
 
 
