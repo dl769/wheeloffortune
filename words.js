@@ -3,15 +3,30 @@ var words={
     2: "DUPA",
     3: "KOSC",
     4: "DREWNO",
-    5: "MEMEMEMES"
+    5: "MEMEMEMES",
+    6: "AHA DA",
+    7: "DS DS",
+    8: "DANIE DUPY",
+    9: "DUPY",                //words should be always UPPERCASED!! eg. no 8 won't work properly
+    10: "STAJNIA AUGIASZA",
+    11: "SERNIK NA ZIMNO",
+    12: "KLUB SERC",
+    13: "BEZSENNE NOCE",
+    14: "GORZKI SZLOCH",
+    15: "ODKURZANIE",
+    16: "PALONE DREWNO",
+    17: "IMIENINY CIOCI",
+    18: "WYJAZD NA WAKACJE",
+    19: "ZIMOWY SEN",
+    20: "PALENIE JANA"
 }
 var lengthOfTheWord =0;
 var draw =0;
-drawTheWord();
+var noOfSpaces= 0;
 
 function drawTheWord(){
     console.log(words)
-    draw =  Math.floor(Math.random() * 5) + 1;
+    draw =  Math.floor(Math.random() * 20) + 1;
     console.log(words[draw][1],'ddSS')
     console.log(words.jed,'ddSS')
     console.log('->', words[1].length)
@@ -25,6 +40,7 @@ function checkLengthOfTheWord(){
     console.log('length:',words[draw].length,'of the word:',draw,);
 
     appendLetterBlocks(lengthOfTheWord,draw);
+    checkForSpaces();
 }
 
 function appendLetterBlocks(){ 
@@ -56,7 +72,7 @@ function appendLetterBlocks(){
      }
      console.log('words[draw][i]',words[draw][0]);
      
-
+     
 }
 
 function appendProperAnswer(){
@@ -91,5 +107,23 @@ function appendProperAnswer(){
      }
      console.log('words[draw][i]',words[draw][0]);
 
+     
+}
 
+
+function checkForSpaces(){
+
+
+    for(var i=0; i<words[draw].length; i++){
+        if(words[draw][i] == ' '){
+            console.log("spacja");
+            noOfSpaces++;
+            i=i+1;                                               
+            $('#'+i+'l').css("background-color","transparent");;
+            i=i-1;
+        }
+        console.log('noofsspac',noOfSpaces);
+
+    }
+properLetters = properLetters + noOfSpaces;                     
 }

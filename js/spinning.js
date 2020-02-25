@@ -5,6 +5,7 @@ var spinPower = 0;
 var noOfField = 0;
 var currentPlayer = 1;
 var properLetters =0; //variable used in comparing length of answer with proper letters
+var usedLetters = []; //letters already used to prevent winning by telling 2x A in word ALA eg
 
 function buttonPress(){
      buttonPressTime = new Date();    
@@ -98,6 +99,7 @@ function checkAnswer(){
     var isTheLetterInAnswer =0;
     if(answer.toUpperCase() === words[draw]) {                                      //IF final answer is correct...
         appendProperAnswer();
+        roundWon();
         return 0;
     }
 
@@ -106,27 +108,49 @@ function checkAnswer(){
         nextPlayer(); 
         return 0;
     }
-    
-    for (var i=0; i<lengthOfTheWord; i++){                      
-        for (var i=0; i<lengthOfTheWord; i++){
+    if(usedLetters.every(wasTheLetterAlready)){
+        for (var i=0; i<lengthOfTheWord; i++){    console.log(properLetters,'properletteresa',words[draw].length);                  
+            for (var i=0; i<lengthOfTheWord; i++){
 
-            if (answer.toUpperCase() === words[draw][i] ) {                         //If letter is in final word then show all boxes with particular letter
-                i=i+1;
-                $('#'+i+'l').html(answer.toUpperCase());
-                $('#'+i+'l').css("background-color","#efe4b0");
-                i=i-1;
-                isTheLetterInAnswer = 1;
-                properLetters = properLetters+ 1;
+                if (answer.toUpperCase() === words[draw][i]) {                         //If letter is in final word then show all boxes with particular letter
+                    i=i+1;
+                    $('#'+i+'l').html(answer.toUpperCase());
+                    $('#'+i+'l').css("background-color","#efe4b0");
+                    i=i-1;
+                    isTheLetterInAnswer = 1;
+                    properLetters = properLetters+ 1;
+                    usedLetters.push(answer);
+                    console.log(usedLetters,'uzyteliterkii')
+            }
+            if(properLetters == words[draw].length) roundWon();             //todo Roundwon // toDO 3x AAA in ala wins the game :( 
         }
-        if(properLetters == words[draw].length) window.alert('victory'); //todo Roundwon
+        if(isTheLetterInAnswer == 1) return true;                                     //preventing returning true on letters that are not in answer
+        }
     }
-       if(isTheLetterInAnswer == 1) return true;                                     //preventing returning true on letters that are not in answer
-    }
-
     window.alert('Wrong letter! Next player\'s turn');                              //IF letter is not in final answer (none of above conditions is fulfilled)...
     nextPlayer();
    
+
 }
+
+function wasTheLetterAlready(char){
+    return char != answer;
+}
+
+function roundWon(){
+    
+    if(currentPlayer== 1){
+        player.totalCash = player.totalCash + player.cash;
+        addMoney(-1);   //
+    }
+    if(currentPlayer== 2){
+        player2.totalCash = player2.totalCash + player2.cash;
+        addMoney(-1);   //
+    }
+    window.alert('v');
+    //nextRound() TODO
+}
+
 
 function addMoney(prize){
     console.log(currentPlayer,'crrrrrrrrrrrrrrrrrrrrr')
@@ -168,12 +192,14 @@ var player = {
     name: '',
     face: '',
     cash: 0,
+    totalCash: 0,
 }
 
 var player2 = {
     name: '',
     face: '',
     cash: 0,
+    totalCash: 0,
 }
 
 function playerOneBio(playerF){                         //assign face to the player
@@ -214,3 +240,49 @@ function playerOneBio(playerF){                         //assign face to the pla
     }
 
 }
+
+
+//TROLOLO EVERY USED BUT DOESNT WORK SINCE YOU CAN TELL THE LETTER ONLY ONCE :/
+// var usedLetters = [];
+
+// function checkAnswer(){
+//     var isTheLetterInAnswer =0;
+//     if(answer.toUpperCase() === words[draw]) {                                      //IF final answer is correct...
+//         appendProperAnswer();
+//         roundWon();
+//         return 0;
+//     }
+
+//     if(answer.length>1) {                                                           //IF final answer is incorrect...
+//         window.alert('Wrong answer! Next player\'s turn'); 
+//         nextPlayer(); 
+//         return 0;
+//     }
+
+//     for (var i=0; i<lengthOfTheWord; i++){    console.log(properLetters,'properletteresa',words[draw].length);                  
+//         for (var i=0; i<lengthOfTheWord; i++){
+
+//             if (answer.toUpperCase() === words[draw][i] && usedLetters.every(wasTheLetterAlready)) {                         //If letter is in final word then show all boxes with particular letter
+//                 i=i+1;
+//                 $('#'+i+'l').html(answer.toUpperCase());
+//                 $('#'+i+'l').css("background-color","#efe4b0");
+//                 i=i-1;
+//                 isTheLetterInAnswer = 1;
+//                 properLetters = properLetters+ 1;
+//                 usedLetters.push(answer);
+//                 console.log(usedLetters,'uzyteliterkii')
+//         }
+//         if(properLetters == words[draw].length) roundWon();             //todo Roundwon // toDO 3x AAA in ala wins the game :( 
+//     }
+//        if(isTheLetterInAnswer == 1) return true;                                     //preventing returning true on letters that are not in answer
+//     }
+
+//     window.alert('Wrong letter! Next player\'s turn');                              //IF letter is not in final answer (none of above conditions is fulfilled)...
+//     nextPlayer();
+   
+
+// }
+
+// function wasTheLetterAlready(char){
+//     return char != answer;
+// }

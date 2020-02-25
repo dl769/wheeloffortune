@@ -30,4 +30,5 @@ var countPlayers = 1;
         '<div id="player2stats"><p id="rcorners1"><b><a id="playernametext">&nbsp'+player2.name+'&nbsp</a></b><img src="'+player2.face+'" id="displayed"><a id="money2"></a></p></div>');
 
        window.alert(player.name+', please press spin the wheel by pressing it!');
+       drawTheWord();
     }
