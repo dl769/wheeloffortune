@@ -33,8 +33,8 @@ html {
 #starterTable{
   position: absolute;
   width: 20%;
-  left: 34.5%;
-  top: 10%;
+  left: 29.5%;
+  top: 8%;
   background-color: grey;
   border-style: ridge;
   border-color: khaki;
@@ -47,17 +47,24 @@ html {
   width: 0;
   height: 0;
 }
-
 /* IMAGE STYLES */
 [type=radio] + img {
   cursor: pointer;
 }
-
+[type=radio] + img {
+  cursor: pointer;
+}
 /* CHECKED STYLES */
-[type=radio]:checked + img {
+[name=face]:checked + img {
   outline: 4px solid #f00;
 }
-
+/* CHECKED STYLES */
+[name=flag]:checked + img {
+  outline: 4px solid green;
+}
+#bb{
+  cursor: pointer;
+}
 #bb:hover {
   color: yellow;
 }
@@ -68,19 +75,19 @@ html {
 
 }
 #rcorners1 {
-
   font-size: 30px;
   text-align: center;
 }
 #displayed {
   display: block;
   margin-left: auto;
-  margin-right: auto }
+  margin-right: auto 
+}
+
 #money1{
   font: sans-serif;
   background-color:#00cc00;
   border-radius: 50px; 
-
 }
 #money2{
   font: sans-serif;
@@ -130,7 +137,43 @@ html {
   text-align: center;
 }
 
-#playernametext{
+#playernametext1{
   background: #ffcc99 ;
   border-radius: 25px;
+  border: solid;
+  border-color: #dbac7d;
+}
+#playernametext2{
+  background: #ffcc99 ;
+  border-radius: 25px;
+  border: solid;
+  border-color: #dbac7d;
+}
+#blinkingplayernametext{
+  background: #ffcc99 ;
+  border-radius: 25px;
+  border: solid;
+  border-color:#8d4a08;
+  border-width: 5px;
+  animation:blinkingText 1.5s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: #000; }
+    60%{    color: transparent; }
+    75%{    color:transparent;  }
+    100%{   color: #000;    }
+
+}
+#roundC{
+  position: fixed;
+  top: 10%;
+  left: 63%;
+  color: black;
+}
+#roundNoText{
+  background:#BC8F8F ;
+  border-radius: 10px;
+  border: solid;
+  border-color: rgb(158, 117, 117);
 }

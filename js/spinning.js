@@ -68,7 +68,7 @@ if (noOfField>24){
 }
 
 switch(noOfField+1){
-    case 25: console.log("bankrut"); answer = window.prompt("Bankrupt, next player's turn!");addMoney(-1); break;
+    case 25: console.log("bankrut"); answer = window.alert("Bankrupt, next player's turn!");addMoney(-1); break;
     case 2: console.log("9000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(9000);} break;
     case 3: console.log("5000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(5000);} break;
     case 4:  console.log("8000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(8000);} break;
@@ -86,7 +86,7 @@ switch(noOfField+1){
     case 16:  console.log("15000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(15000);} break;
     case 17:  console.log("3000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(3000);} break;
     case 18:  console.log("9000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(9000);} break;
-    case 19:  console.log("lose a turn"); answer = window.prompt("Next player's turn!"); nextPlayer(); break;
+    case 19:  console.log("lose a turn"); answer = window.alert("Next player's turn!"); nextPlayer(); break;
     case 20:  console.log("7000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(7000);} break;
     case 21:  console.log("10000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(10000);} break;
     case 22:  console.log("6000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(6000);} break;
@@ -108,7 +108,7 @@ function checkAnswer(){
         nextPlayer(); 
         return 0;
     }
-    if(usedLetters.every(wasTheLetterAlready)){
+    if(usedLetters.every(wasTheLetterAlready) && answer != ' '){
         for (var i=0; i<lengthOfTheWord; i++){    console.log(properLetters,'properletteresa',words[draw].length);                  
             for (var i=0; i<lengthOfTheWord; i++){
 
@@ -133,7 +133,7 @@ function checkAnswer(){
 
 }
 
-function wasTheLetterAlready(char){
+function wasTheLetterAlready(char){                     //function to use with every() method
     return char != answer;
 }
 
@@ -147,8 +147,12 @@ function roundWon(){
         player2.totalCash = player2.totalCash + player2.cash;
         addMoney(-1);   //
     }
-    window.alert('v');
-    //nextRound() TODO
+    window.alert('v'); 
+    
+    if(roundCounter<4) {
+        nextRound();
+    } else endOfTheGame();
+    
 }
 
 
@@ -158,7 +162,7 @@ function addMoney(prize){
         if(prize == -1){
         player.cash = 0;
         $('#money1').html(' ·  '+player.cash+'  ·');
-        currentPlayer = 2; prize =0;                            //price =0 to prevent jumping into another if with prize =-1 and retain proper order 
+        nextPlayer(); prize =0;                            //price =0 to prevent jumping into another if with prize =-1 and retain proper order 
         }else{
             player.cash = player.cash + prize;
             $('#money1').html(' ·  '+player.cash+'  ·');
@@ -169,7 +173,7 @@ function addMoney(prize){
         if(prize == -1){
         player2.cash = 0;
         $('#money2').html(' ·  '+player2.cash+'  ·');
-        currentPlayer = 1;
+        nextPlayer();
         }else{
             player2.cash = player2.cash + prize;
             $('#money2').html(' ·  '+player2.cash+'  ·');
@@ -182,9 +186,14 @@ function nextPlayer(){
     ////TODO 
     console.log(currentPlayer,'nextplayer,,,')
     if(currentPlayer==1){
+        $('#blinkingplayernametext').attr("id","playernametext1");
         currentPlayer = 2;
+        $('#playernametext2').attr("id","blinkingplayernametext");
+
     }else{
+        $('#blinkingplayernametext').attr("id","playernametext2");
         currentPlayer = 1;
+        $('#playernametext1').attr("id","blinkingplayernametext");
     }
 }
 

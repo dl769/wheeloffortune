@@ -16,7 +16,7 @@
   <div id='cont'>
   <img class=wheel id=el src=Wheel1.png>
  
-  <i class="fas fa-location-arrow" id='pointer'></i>
+  <i class="" id='pointer'></i>
 </div>
 
 
@@ -34,6 +34,7 @@
 
       <table id="starterTable">
         <tr>
+          <td>  <label><input type="radio" name="face" autocomplete="off" id="0"><img src="avatars/face0.png"/>  </label></td>
           <td>  <label><input type="radio" name="face" autocomplete="off" id="1"><img src="avatars/face1.png"/>  </label></td>
           <td>  <label><input type="radio" name="face" autocomplete="off" id="2"><img src="avatars/face2.png"/>  </label></td>
           <td>  <label><input type="radio" name="face" autocomplete="off" id="3"><img src="avatars/face3.png"/>  </label></td>
@@ -45,10 +46,18 @@
           <td>  <label><input type="radio" name="face" autocomplete="off" id="6"><img src="avatars/face6.png"/>  </label></td>
           <td>  <label><input type="radio" name="face" autocomplete="off" id="7"><img src="avatars/face7.png"/>  </label></td>
           <td>  <label><input type="radio" name="face" autocomplete="off" id="8"><img src="avatars/face8.png"/>   </label></td>
+          <td>  <label><input type="radio" name="face" autocomplete="off" id="9"><img src="avatars/face9.png"/>   </label></td>
         </tr>
         <tr>
           <td>  <img src="avatars/face10.png"/>  </td>  <td>  <input type="text" class="surname" value="Player One" autocomplete="off">  </td>
-          <td>  <center><i class="fas fa-arrow-alt-circle-right fa-5x" id='bb' onclick="pop();"></i></center></td>                
+          <td>  <center><i class="fas fa-arrow-alt-circle-right fa-5x" id='bb' onclick="pop();"></i></center></td>     
+          <td>  <b><center><i class="fa-1x"">Choose your avatar, name and click to start!</i></center></b></td>              
+        </tr>
+        <tr>
+          <td>   </td>  
+          <td>   <center><label><input type="radio" name="flag" autocomplete="off" id="ukFlag" checked='true'><img src="flags/ukx.png"/></center> </td>
+          <td>  <center><i class="fa-2x">Choose language</i></center></td>     
+          <td>  <center><label><input type="radio" name="flag" autocomplete="off" id="plFlag"><img src="flags/plx.png"/> </center></td>       
         </tr>
       </table> 
 
@@ -65,6 +74,7 @@
   <script src="js/spinning.js"></script>
   <script src="device.js"></script>
   <script src="words.js"></script>
+  <script src="rounds.js"></script>
   <script>playerOneBio();</script>
 </body>
 </html>

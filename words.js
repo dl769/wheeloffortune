@@ -7,7 +7,7 @@ var words={
     6: "AHA DA",
     7: "DS DS",
     8: "DANIE DUPY",
-    9: "DUPY",                //words should be always UPPERCASED!! eg. no 8 won't work properly
+    9: "DUPY",                //words should be always UPPERCASED!!
     10: "STAJNIA AUGIASZA",
     11: "SERNIK NA ZIMNO",
     12: "KLUB SERC",
@@ -20,9 +20,9 @@ var words={
     19: "ZIMOWY SEN",
     20: "PALENIE JANA"
 }
-var lengthOfTheWord =0;
-var draw =0;
-var noOfSpaces= 0;
+var lengthOfTheWord = 0;
+var draw = 0;
+var noOfSpaces = 0;
 
 function drawTheWord(){
     console.log(words)
@@ -46,7 +46,7 @@ function checkLengthOfTheWord(){
 function appendLetterBlocks(){ 
     console.log('ppp');
 
-    $('#wordBlocks').append('<table> <tr>'+
+    $('#wordBlocks').append('<table id="lettersTable"> <tr>'+
     '<td>  <p class="letters" id="1l"><a id=pass></a></p></td>'+
     '<td>  <p class="letters" id="2l"><a id=pass></a></p></td>'+
     '<td>  <p class="letters" id="3l"><a id=pass></a></p></td>'+
@@ -81,7 +81,7 @@ function appendProperAnswer(){
         $('#'+i+'l').remove();
     }
 
-    $('#wordBlocks').append('<table> <tr>'+
+    $('#wordBlocks').append('<table id="lettersTable"> <tr>'+
     '<td>  <p class="letterd" id="1l"><a id=pass>'+words[draw][0]+'</a></p></td>'+
     '<td>  <p class="letterd" id="2l"><a id=pass>'+words[draw][1]+'</a></p></td>'+
     '<td>  <p class="letterd" id="3l"><a id=pass>'+words[draw][2]+'</a></p></td>'+
@@ -101,7 +101,7 @@ function appendProperAnswer(){
     '<td>  <p class="letterd" id="17l"><a id=pass>'+words[draw][16]+'</a></p></td>'+
     '<td>  <p class="letterd" id="18l"><a id=pass>'+words[draw][17]+'</a></p></td>'+
      '</tr>  </table>');
-
+     
      for (var i=lengthOfTheWord+1;i<19;i++){                        //removes unused blocks (+1 because we don't want to delete the last letter)
          $('#'+i+'l').remove();
      }
