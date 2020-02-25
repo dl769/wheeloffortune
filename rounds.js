@@ -2,6 +2,11 @@ var roundCounter = 1;                   //in general 4 rounds
 
 function nextRound(){
     roundCounter++;
+    
+    ///
+    properLetters =0; 
+    usedLetters = [];
+    ///
 
     $('#roundNoText').html('&nbspRound&nbsp'+roundCounter+'&nbspof 4&nbsp');
 
