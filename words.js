@@ -106,7 +106,6 @@ function appendProperAnswer(){
          $('#'+i+'l').remove();
      }
      console.log('words[draw][i]',words[draw][0]);
-
      
 }
 

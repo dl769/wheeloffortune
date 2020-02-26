@@ -1,4 +1,16 @@
 var roundCounter = 1;                   //in general 4 rounds
+var winner ={
+    name: 'zwyciezca',
+    face: "",
+    cash: 0
+    
+}
+var runnerup={
+    name: 'f',
+    face: "",
+    cash: 0
+    
+}
 
 function nextRound(){
     roundCounter++;
@@ -26,7 +38,57 @@ console.log('cr PL ',currentPlayer);
 
 }
 
+function whoHasWon(){
+    if(player.totalCash>player2.totalCash){
+        winner.name = player.name;
+        winner.cash = player.totalCash;
+        winner.face = player.face;
+        runnerup.name = player2.name;
+        runnerup.cash = player2.totalCash;
+        runnerup.face = player2.face;
+    }else{
+        winner.name = player2.name;
+        winner.cash = player2.totalCash;
+        winner.face = player2.face;
+        runnerup.name = player.name;
+        runnerup.cash = player.totalCash;
+        runnerup.face = player.face;
+    }
+}
+
 function endOfTheGame(){
 
-    //TODOOooo
+    whoHasWon();
+    $('#playersIntroduction').remove();
+    $('#lettersTable').remove();
+    $('#cont').remove();
+
+    appendFinalTable();
+    //removeplayers $(#playersIntroduction).remove();
+    //removeletters $(#lettersTable).remove();
+    //removeTheWheel $(#cont).remove(); if mobile -> $(#rollerH).remove();
+    //appendFinalTable(); -gotowe
+    
+
+    // $('#playersIntroduction').remove();
+    // $('#lettersTable').remove();
+    // $('#cont').remove();
+    //TODOOooo 
 }
+
+function appendFinalTable(){
+
+    $('#playersIntroduction').remove();
+    $('#lettersTable').remove();
+    $('#cont').remove();
+
+    $('#congrats').append('<table id="congratulations"><tr><td> <center><a id="winner">WINNER, '+winner.name+'</a> </center></td><td> <center><a id="placetwo">'+runnerup.name+'</a> </center></td> </tr>'+
+    '<tr><td>  <center><img src ="'+winner.face+'"></center></td><td>  <center><img src ="'+runnerup.face+'"></center></td></tr>'+
+    '<tr><td>  <center><a id="winner"></a><img src ="flags/medal.png"></center></td><td>  <center><a id="winner"></a><img src ="flags/money.png"></center></td></tr>'+
+    '<tr><td>  <center><a id="winner"></a><img src ="flags/money.png"></center></td><td>  <center><a id="placetwo">$ '+runnerup.cash+'</a></center></td></tr>'+
+    '<tr><td>  <center><a id="winner">$ '+winner.cash+'</a></center></td><td>  <center><a href ="index.html"><button id="playagain">&nbsp;PLAY AGAIN&nbsp;</button></a></center></td></tr>'+
+    '<tr><td>  &nbsp;</td><td>  </td></tr>'+
+    '<tr><td>  &nbsp;</td><td>  </td></tr>'+
+    '<tr><td>  &nbsp;</td><td>  </td></tr></table>');
+
+  }

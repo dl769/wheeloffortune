@@ -71,12 +71,15 @@ html {
 .surname{
   background-color: transparent;
   border: solid;
-  font-size: 12px;
+  font-size: 30px;
+  height: 30px;
+  width: 150px;
 
 }
 #rcorners1 {
   font-size: 30px;
   text-align: center;
+  background-color: transparent;
 }
 #displayed {
   display: block;
@@ -176,4 +179,38 @@ html {
   border-radius: 10px;
   border: solid;
   border-color: rgb(158, 117, 117);
+}
+#congratulations{
+  position: absolute;
+  width: 40%;
+  left: 30%;
+  top: 8%;
+  background-color: grey;
+  border-style: ridge;
+  border-color: khaki;
+  border-width: 15px;
+}
+#winner{
+  font-size: 30px;
+  color: rgb(214, 186, 24);
+}
+#playagain{
+  font-size: 30px;  
+  background: rgb(95, 92, 92) ;
+  border-radius: 25px;
+  border: solid;
+  border-color: rgb(49, 46, 46);
+  border-width: 5px;
+  animation:blinkingTextBTN 1.5s infinite;
+}
+@keyframes blinkingTextBTN{
+  0%{     color: rgb(102, 170, 57)  }
+  49%{    color: rgb(82, 136, 46); }
+ /* 55%{    color: rgb(58, 98, 30); }*/
+  65%{    color:rgb(74, 128, 35);  }
+  100%{   color: rgb(102, 170, 57);    }
+
+}
+#placetwo{
+  font-size: 25px;
 }

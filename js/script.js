@@ -33,7 +33,12 @@ var countPlayers = 1;
 
        window.alert(player.name+', please press spin the wheel by pressing it!');
 
-       $('#pointer').attr('class','fas fa-location-arrow');         //appending arrow which will point values on the wheel
+       $('#pointer').attr('class','fas fa-location-arrow');         //appending arrow which will
        drawTheWord();
        $('#playernametext1').attr("id","blinkingplayernametext");
+       //appendFinalTable(); just testing/didnt wanna wait till end of the game so put it here to delete...
     }
+
+
+     
+    
