@@ -211,7 +211,7 @@ var player2 = {
     totalCash: 0,
 }
 
-function playerOneBio(playerF){                         //assign face to the player
+function playerBio(playerF){                         //assign face to the player
 
     var face = 0;
 

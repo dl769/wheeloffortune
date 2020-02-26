@@ -1,0 +1,216 @@
+html { 
+  background: url(background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.wheel {
+    position: fixed;
+    top: 6.5%;
+    left: 32.5%;
+    transform: rotate(0);
+    width: 35%;
+    height: auto;
+    display:block;
+    
+}
+#pointer{
+    position: fixed;
+    font-size: 50px;
+    top:2.5%;
+    left: 48.5%;
+    transform: translate(-50%, -50%);
+    display:block;
+    transform: rotate(135deg);
+    color: burlywood;
+}
+#rollerH{
+  width: 155%;
+    height: auto;
+    color: grey;
+}
+#starterTable{
+  position: absolute;
+  width: 20%;
+  left: 29.5%;
+  top: 8%;
+  background-color: grey;
+  border-style: ridge;
+  border-color: khaki;
+  border-width: 15px;
+}
+/* HIDE RADIO */
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+}
+[type=radio] + img {
+  cursor: pointer;
+}
+/* CHECKED STYLES */
+[name=face]:checked + img {
+  outline: 4px solid #f00;
+}
+/* CHECKED STYLES */
+[name=flag]:checked + img {
+  outline: 4px solid green;
+}
+#bb{
+  cursor: pointer;
+}
+#bb:hover {
+  color: yellow;
+}
+.surname{
+  background-color: transparent;
+  border: solid;
+  font-size: 30px;
+  height: 30px;
+  width: 150px;
+
+}
+#rcorners1 {
+  font-size: 30px;
+  text-align: center;
+  background-color: transparent;
+}
+#displayed {
+  display: block;
+  margin-left: auto;
+  margin-right: auto 
+}
+
+#money1{
+  font: sans-serif;
+  background-color:#00cc00;
+  border-radius: 50px; 
+}
+#money2{
+  font: sans-serif;
+  background-color: #00cc00;
+  border-radius: 50px; 
+
+}
+#player1stats{
+  position: fixed;
+  top: 40%;
+  left: 23%;
+}
+#player2stats{
+  position: fixed;
+  top: 40%;
+  left: 69%;
+}
+#wordBlocks{
+    position: fixed;
+  bottom: 0;
+  margin-left: 225px;
+  margin-bottom: 45px;
+    width: 100%;
+}
+.letters{
+  border-radius: 5px;
+  background: #a2a2a2 ; /* background: #efe4b0; / */
+  font-size: 40px;
+  height: 56px;
+  width: 75px;
+  text-align: center;
+}
+.letterd{
+  border-radius: 5px;
+   background: #efe4b0;
+  font-size: 40px;
+  height: 56px;
+  width: 75px;
+  text-align: center;
+}
+.letterspace{
+  border-radius: 5px;
+   background: transparent;
+  font-size: 40px;
+  height: 56px;
+  width: 75px;
+  text-align: center;
+}
+
+#playernametext1{
+  background: #ffcc99 ;
+  border-radius: 25px;
+  border: solid;
+  border-color: #dbac7d;
+}
+#playernametext2{
+  background: #ffcc99 ;
+  border-radius: 25px;
+  border: solid;
+  border-color: #dbac7d;
+}
+#blinkingplayernametext{
+  background: #ffcc99 ;
+  border-radius: 25px;
+  border: solid;
+  border-color:#8d4a08;
+  border-width: 5px;
+  animation:blinkingText 1.5s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: #000; }
+    60%{    color: transparent; }
+    75%{    color:transparent;  }
+    100%{   color: #000;    }
+
+}
+#roundC{
+  position: fixed;
+  top: 10%;
+  left: 63%;
+  color: black;
+}
+#roundNoText{
+  background:#BC8F8F ;
+  border-radius: 10px;
+  border: solid;
+  border-color: rgb(158, 117, 117);
+}
+#congratulations{
+  position: absolute;
+  width: 40%;
+  left: 30%;
+  top: 8%;
+  background-color: grey;
+  border-style: ridge;
+  border-color: khaki;
+  border-width: 15px;
+}
+#winner{
+  font-size: 30px;
+  color: rgb(214, 186, 24);
+}
+#playagain{
+  font-size: 30px;  
+  background: rgb(95, 92, 92) ;
+  border-radius: 25px;
+  border: solid;
+  border-color: rgb(49, 46, 46);
+  border-width: 5px;
+  animation:blinkingTextBTN 1.5s infinite;
+}
+@keyframes blinkingTextBTN{
+  0%{     color: rgb(102, 170, 57)  }
+  49%{    color: rgb(82, 136, 46); }
+ /* 55%{    color: rgb(58, 98, 30); }*/
+  65%{    color:rgb(74, 128, 35);  }
+  100%{   color: rgb(102, 170, 57);    }
+
+}
+#placetwo{
+  font-size: 25px;
+}
