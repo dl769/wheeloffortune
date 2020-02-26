@@ -21,7 +21,7 @@ function nextRound(){
     noOfSpaces = 0;console.log('SDX',usedLetters)
     ///
 
-    $('#roundNoText').html('&nbspRound&nbsp'+roundCounter+'&nbspof 4&nbsp');
+    $('#roundNoText').html('&nbsp'+language.round+'&nbsp'+roundCounter+'&nbsp'+language.of+' 4&nbsp');
 
     $('#lettersTable').remove();
     $('#lettersTable').remove();                //need to remove both answer and grey blocks
@@ -82,11 +82,11 @@ function appendFinalTable(){
     $('#lettersTable').remove();
     $('#cont').remove();
 
-    $('#congrats').append('<table id="congratulations"><tr><td> <center><a id="winner">WINNER, '+winner.name+'</a> </center></td><td> <center><a id="placetwo">'+runnerup.name+'</a> </center></td> </tr>'+
+    $('#congrats').append('<table id="congratulations"><tr><td> <center><a id="winner">'+language.winner+', '+winner.name+'</a> </center></td><td> <center><a id="placetwo">'+runnerup.name+'</a> </center></td> </tr>'+
     '<tr><td>  <center><img src ="'+winner.face+'"></center></td><td>  <center><img src ="'+runnerup.face+'"></center></td></tr>'+
     '<tr><td>  <center><a id="winner"></a><img src ="flags/medal.png"></center></td><td>  <center><a id="winner"></a><img src ="flags/money.png"></center></td></tr>'+
     '<tr><td>  <center><a id="winner"></a><img src ="flags/money.png"></center></td><td>  <center><a id="placetwo">$ '+runnerup.cash+'</a></center></td></tr>'+
-    '<tr><td>  <center><a id="winner">$ '+winner.cash+'</a></center></td><td>  <center><a href ="index.html"><button id="playagain">&nbsp;PLAY AGAIN&nbsp;</button></a></center></td></tr>'+
+    '<tr><td>  <center><a id="winner">$ '+winner.cash+'</a></center></td><td>  <center><a href ="index.html"><button id="playagain">&nbsp;'+language.playAgain+'&nbsp;</button></a></center></td></tr>'+
     '<tr><td>  &nbsp;</td><td>  </td></tr>'+
     '<tr><td>  &nbsp;</td><td>  </td></tr>'+
     '<tr><td>  &nbsp;</td><td>  </td></tr></table>');

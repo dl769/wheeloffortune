@@ -23,7 +23,8 @@ var words={
 var lengthOfTheWord = 0;
 var draw = 0;
 var noOfSpaces = 0;
-
+var lang;
+var myList;
 function drawTheWord(){
     console.log(words)
     draw =  Math.floor(Math.random() * 20) + 1;

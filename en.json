@@ -1,5 +1,17 @@
-{ 
-    "date": "Date", 
-    "save": "Save",
-    "cancel": "Cancel" 
+{
+    "welcome": "Choose your avatar, language, name and click to start!", 
+    "languageText": "Language",
+    "player1": "Player One",
+    "player2": "Player Two",
+    "letterSelect": "Please select the letter!", 
+    "loseATurn":"Next Player's turn", 
+    "bankrupt":"Bankrupt! Next Player's turn", 
+    "wrongLetter": "Wrong letter! Next player's turn",
+    "wrongAnswer": "Wrong answer! Next player's turn",
+    "pleaseSpin":  ", please spin the Wheel by pressing it. Longer means harder!",
+    "round": "Round",
+    "of": "of",
+    "winner": "Winner",
+    "playAgain": "Play Again",
+    "guessed": "Well done! You guessed the answer!"
 }

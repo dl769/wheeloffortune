@@ -1,0 +1,17 @@
+{
+    "welcome": "Wybierz avatar, język i kliknij, żeby rozpocząć!", 
+    "languageText": "Język",
+    "player1": "Gracz 1",
+    "player2": "Gracz 2",
+    "letterSelect": "Wybierz literę lub podaj hasło: ", 
+    "loseATurn": "Kolejka następnego gracza!", 
+    "bankrupt": "Bankrut! Kolejka następnego gracza!", 
+    "wrongLetter": "Zła litera! Kolejka następnego gracza!",
+    "wrongAnswer": "Zła odpowiedź! Kolejka następnego gracza!",
+    "pleaseSpin":  ", zakręć kołem nasikając na nie. Im dłużej tym mocniej!",
+    "round": "Runda",
+    "of": "z",
+    "winner": "Zwycięzca",
+    "playAgain": "Graj ponownie",
+    "guessed": "Brawo! Zgadłeś odpowiedź!"
+}

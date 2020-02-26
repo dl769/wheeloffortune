@@ -68,30 +68,30 @@ if (noOfField>24){
 }
 
 switch(noOfField+1){
-    case 25: console.log("bankrut"); answer = window.alert("Bankrupt, next player's turn!");addMoney(-1); break;
-    case 2: console.log("9000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(9000);} break;
-    case 3: console.log("5000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(5000);} break;
-    case 4:  console.log("8000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(8000);} break;
-    case 5:  console.log("7000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(7000);} break;
-    case 6:  console.log("15000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(15000);} break;
-    case 7:  console.log("bankrut"); answer = window.alert("Bankrupt, next player's turn!"); addMoney(-1); break;
-    case 8:  console.log("6000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(6000);} break;
-    case 9:  console.log("9000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(9000);} break;
-    case 10:  console.log("5000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(5000);} break;
-    case 11:  console.log("7000"); answer = window.prompt("Please select the letter");if(checkAnswer()){addMoney(7000);} break;
-    case 12:  console.log("6000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(6000);} break;
-    case 13:  console.log("10000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(10000);} break;
-    case 14:  console.log("3000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(3000);} break;
-    case 15:  console.log("8000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(8000);} break;
-    case 16:  console.log("15000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(15000);} break;
-    case 17:  console.log("3000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(3000);} break;
-    case 18:  console.log("9000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(9000);} break;
-    case 19:  console.log("lose a turn"); answer = window.alert("Next player's turn!"); nextPlayer(); break;
-    case 20:  console.log("7000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(7000);} break;
-    case 21:  console.log("10000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(10000);} break;
-    case 22:  console.log("6000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(6000);} break;
-    case 23:  console.log("8000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(8000);} break;
-    case 24:  console.log("3000"); answer = window.prompt("Please select the letter"); if(checkAnswer()){addMoney(3000);} break;
+    case 25: console.log("bankrut"); answer = window.alert(language.bankrupt);addMoney(-1); break;
+    case 2: console.log("9000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(9000);} break;
+    case 3: console.log("5000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(5000);} break;
+    case 4:  console.log("8000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(8000);} break;
+    case 5:  console.log("7000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(7000);} break;
+    case 6:  console.log("15000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(15000);} break;
+    case 7:  console.log("bankrut"); answer = window.alert(language.bankrupt); addMoney(-1); break;
+    case 8:  console.log("6000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(6000);} break;
+    case 9:  console.log("9000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(9000);} break;
+    case 10:  console.log("5000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(5000);} break;
+    case 11:  console.log("7000"); answer = window.prompt(language.letterSelect);if(checkAnswer()){addMoney(7000);} break;
+    case 12:  console.log("6000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(6000);} break;
+    case 13:  console.log("10000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(10000);} break;
+    case 14:  console.log("3000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(3000);} break;
+    case 15:  console.log("8000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(8000);} break;
+    case 16:  console.log("15000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(15000);} break;
+    case 17:  console.log("3000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(3000);} break;
+    case 18:  console.log("9000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(9000);} break;
+    case 19:  console.log("lose a turn"); answer = window.alert(language.loseATurn); nextPlayer(); break;
+    case 20:  console.log("7000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(7000);} break;
+    case 21:  console.log("10000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(10000);} break;
+    case 22:  console.log("6000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(6000);} break;
+    case 23:  console.log("8000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(8000);} break;
+    case 24:  console.log("3000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(3000);} break;
     }  console.log('check,',player.face,player.name);
 }  
 
@@ -104,7 +104,7 @@ function checkAnswer(){
     }
 
     if(answer.length>1) {                                                           //IF final answer is incorrect...
-        window.alert('Wrong answer! Next player\'s turn'); 
+        window.alert(language.wrongAnswer); 
         nextPlayer(); 
         return 0;
     }
@@ -127,7 +127,7 @@ function checkAnswer(){
         if(isTheLetterInAnswer == 1) return true;                                     //preventing returning true on letters that are not in answer
         }
     }
-    window.alert('Wrong letter! Next player\'s turn');                              //IF letter is not in final answer (none of above conditions is fulfilled)...
+    window.alert(language.wrongLetter);                              //IF letter is not in final answer (none of above conditions is fulfilled)...
     nextPlayer();
    
 
@@ -147,7 +147,7 @@ function roundWon(){
         player2.totalCash = player2.totalCash + player2.cash;
         addMoney(-1);   //
     }
-    window.alert('v'); 
+    window.alert(language.guessed); 
     
     if(roundCounter<4) {
         nextRound();
@@ -238,6 +238,12 @@ function playerOneBio(playerF){                         //assign face to the pla
 
     }   else if (document.getElementById('8').checked) {
         face = "avatars/face8.png"
+    }
+        else if (document.getElementById('9').checked) {
+        face = "avatars/face9.png"
+    }   
+        else if (document.getElementById('0').checked) {
+        face = "avatars/face0.png"
     }
 
     if(face!=0){   
