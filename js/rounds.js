@@ -28,12 +28,10 @@ function nextRound(){
 
     player.cash = 0;
     player2.cash = 0;
-    console.log('cr PL ',currentPlayer);
 
     if((roundCounter%2 == 0 && currentPlayer == 1) || (roundCounter%2 != 0 && currentPlayer == 2))  nextPlayer();
     //player 2 starst 2 and 4th round, function nextPlayer changes players if needed and gives blinking effect
     
-console.log('cr PL ',currentPlayer);
     drawTheWord();                              //starts again with new word
 
 }

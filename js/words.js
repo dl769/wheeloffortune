@@ -1,16 +1,16 @@
 var wordsPL={
     1: "ALA",
-    2: "DUPA",
+    2: "SZLAK BESKIDZKI",
     3: "KOSC",
     4: "DREWNO",
-    5: "MEMEMEMES",
-    6: "AHA DA",
-    7: "DS DS",
-    8: "DANIE DUPY",
-    9: "DUPY",                //words should be always UPPERCASED!!
+    5: "PORTFEL",
+    6: "ANNA MARIA",
+    7: "CHLEBAK",
+    8: "BROWARNIK",
+    9: "SZLACHTA POLSKA",                //words should be always UPPERCASED!!
     10: "STAJNIA AUGIASZA",
     11: "SERNIK NA ZIMNO",
-    12: "KLUB SERC",
+    12: "KLUB SPORTOWY",
     13: "BEZSENNE NOCE",
     14: "GORZKI SZLOCH",
     15: "ODKURZANIE",
@@ -18,7 +18,7 @@ var wordsPL={
     17: "IMIENINY CIOCI",
     18: "WYJAZD NA WAKACJE",
     19: "ZIMOWY SEN",
-    20: "PALENIE JANA"
+    20: "JEDZENIE CUKRU"
 }
 var words={
     1: "ACE IN THE HOLE",
@@ -72,11 +72,7 @@ var myList;
 var lengthOfWordsArray;
 
 function drawTheWord(){
-    console.log(words)
     draw =  Math.floor(Math.random() * Object.keys(words).length) + 1;
-    console.log(words[draw][1],'ddSS')
-    console.log(words.jed,'ddSS')
-    console.log('->', words[1].length)
     checkLengthOfTheWord();
 
 }
@@ -84,14 +80,12 @@ function drawTheWord(){
 function checkLengthOfTheWord(){
 
     lengthOfTheWord = words[draw].length
-    console.log('length:',words[draw].length,'of the word:',draw,);
 
     appendLetterBlocks(lengthOfTheWord,draw);
     checkForSpaces();
 }
 
 function appendLetterBlocks(){ 
-    console.log('ppp');
 
     $('#wordBlocks').append('<table id="lettersTable"> <tr>'+
     '<td>  <p class="letters" id="1l"><a id=pass></a></p></td>'+
@@ -117,8 +111,6 @@ function appendLetterBlocks(){
      for (var i=lengthOfTheWord+1;i<19;i++){                        //removes unused blocks (+1 because we don't want to delete the last letter)
          $('#'+i+'l').remove();
      }
-     console.log('words[draw][i]',words[draw][0]);
-     
      
 }
 
@@ -152,7 +144,6 @@ function appendProperAnswer(){
      for (var i=lengthOfTheWord+1;i<19;i++){                        //removes unused blocks (+1 because we don't want to delete the last letter)
          $('#'+i+'l').remove();
      }
-     console.log('words[draw][i]',words[draw][0]);
      
 }
 
@@ -162,13 +153,11 @@ function checkForSpaces(){
 
     for(var i=0; i<words[draw].length; i++){
         if(words[draw][i] == ' '){
-            console.log("spacja");
             noOfSpaces++;
             i=i+1;                                               
             $('#'+i+'l').css("background-color","transparent");;
             i=i-1;
         }
-        console.log('noofsspac',noOfSpaces);
 
     }
 properLetters = properLetters + noOfSpaces;                     

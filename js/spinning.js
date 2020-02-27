@@ -13,7 +13,6 @@ function buttonPress(){
 
 function buttonRelease(){
      buttonReleaseTime = new Date();
-     console.log(buttonReleaseTime-buttonPressTime);                     //That gets us time in ms between button click and release
      spins();
 }
 
@@ -21,21 +20,17 @@ var projectedAngle = 0;
 
 function spins(){
     spinPower = Math.round((buttonReleaseTime-buttonPressTime)/100);    //spinpower transforms time between pressing and releasing button to no of fields 
-    console.log('spinpower:',spinPower);
 
     spinPower = spinPower + randomization();
     noOfField = noOfField + spinPower;
-    console.log(noOfField,1111)
-    console.log('spinpower +rnd:',spinPower);
+
     projectedAngle = spinPower * 15 + currentAngle;                     //projected angle is calculated + added current angle (eg to prevent moving in wrong direction in the worst case scenario)
     spinTheWheel();
 }
 
 function randomization(){                                               //randomize the result
     var random = Math.floor(Math.random() * 4) + 1;
-    console.log('rnd',random);
     return random
-    
 }
         
 var currentAngle=0;
@@ -61,38 +56,38 @@ function spinTheWheel(){
 
 var answer = '';
 
- function fieldRunner(){console.log(noOfField,'la')
+ function fieldRunner(){
 
 if (noOfField>24){
     noOfField =  noOfField % 24;
 }
 
 switch(noOfField+1){
-    case 25: console.log("bankrut"); answer = window.alert(language.bankrupt);addMoney(-1); break;
-    case 2: console.log("9000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(9000);} break;
-    case 3: console.log("5000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(5000);} break;
-    case 4:  console.log("8000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(8000);} break;
-    case 5:  console.log("7000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(7000);} break;
-    case 6:  console.log("15000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(15000);} break;
-    case 7:  console.log("bankrut"); answer = window.alert(language.bankrupt); addMoney(-1); break;
-    case 8:  console.log("6000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(6000);} break;
-    case 9:  console.log("9000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(9000);} break;
-    case 10:  console.log("5000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(5000);} break;
-    case 11:  console.log("7000"); answer = window.prompt(language.letterSelect);if(checkAnswer()){addMoney(7000);} break;
-    case 12:  console.log("6000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(6000);} break;
-    case 13:  console.log("10000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(10000);} break;
-    case 14:  console.log("3000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(3000);} break;
-    case 15:  console.log("8000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(8000);} break;
-    case 16:  console.log("15000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(15000);} break;
-    case 17:  console.log("3000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(3000);} break;
-    case 18:  console.log("9000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(9000);} break;
-    case 19:  console.log("lose a turn"); answer = window.alert(language.loseATurn); nextPlayer(); break;
-    case 20:  console.log("7000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(7000);} break;
-    case 21:  console.log("10000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(10000);} break;
-    case 22:  console.log("6000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(6000);} break;
-    case 23:  console.log("8000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(8000);} break;
-    case 24:  console.log("3000"); answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(3000);} break;
-    }  console.log('check,',player.face,player.name);
+    case 25: answer = window.alert(language.bankrupt);addMoney(-1); break;
+    case 2: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(9000);} break;
+    case 3: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(5000);} break;
+    case 4: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(8000);} break;
+    case 5: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(7000);} break;
+    case 6: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(15000);} break;
+    case 7: answer = window.alert(language.bankrupt); addMoney(-1); break;
+    case 8: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(6000);} break;
+    case 9: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(9000);} break;
+    case 10: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(5000);} break;
+    case 11: answer = window.prompt(language.letterSelect);if(checkAnswer()){addMoney(7000);} break;
+    case 12: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(6000);} break;
+    case 13: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(10000);} break;
+    case 14: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(3000);} break;
+    case 15: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(8000);} break;
+    case 16: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(15000);} break;
+    case 17: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(3000);} break;
+    case 18: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(9000);} break;
+    case 19: answer = window.alert(language.loseATurn); nextPlayer(); break;
+    case 20: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(7000);} break;
+    case 21: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(10000);} break;
+    case 22: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(6000);} break;
+    case 23: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(8000);} break;
+    case 24: answer = window.prompt(language.letterSelect); if(checkAnswer()){addMoney(3000);} break;
+    }  
 }  
 
 function checkAnswer(){
@@ -109,7 +104,7 @@ function checkAnswer(){
         return 0;
     }
     if(usedLetters.every(wasTheLetterAlready) && answer != ' '){
-        for (var i=0; i<lengthOfTheWord; i++){    console.log(properLetters,'properletteresa',words[draw].length);                  
+        for (var i=0; i<lengthOfTheWord; i++){                 
             for (var i=0; i<lengthOfTheWord; i++){
 
                 if (answer.toUpperCase() === words[draw][i]) {                         //If letter is in final word then show all boxes with particular letter
@@ -120,7 +115,7 @@ function checkAnswer(){
                     isTheLetterInAnswer = 1;
                     properLetters = properLetters+ 1;
                     usedLetters.push(answer);
-                    console.log(usedLetters,'uzyteliterkii')
+
                 }
             if(properLetters == words[draw].length) roundWon();             //todo Roundwon // toDO 3x AAA in ala wins the game :( 
         }
@@ -141,11 +136,11 @@ function roundWon(){
     
     if(currentPlayer== 1){
         player.totalCash = player.totalCash + player.cash;
-        addMoney(-1);   //
+        addMoney(-1);   //0
     }
     if(currentPlayer== 2){
         player2.totalCash = player2.totalCash + player2.cash;
-        addMoney(-1);   //
+        addMoney(-1);   //0
     }
     window.alert(language.guessed); 
     
@@ -157,7 +152,7 @@ function roundWon(){
 
 
 function addMoney(prize){
-    console.log(currentPlayer,'crrrrrrrrrrrrrrrrrrrrr')
+
     if(currentPlayer == 1){
         if(prize == -1){
         player.cash = 0;
@@ -179,12 +174,11 @@ function addMoney(prize){
             $('#money2').html(' ·  '+player2.cash+'  ·');
         }
     }
-    console.log(currentPlayer,'crrrrrrrrrrrrrrrrrrrrr')
+
 }
 
 function nextPlayer(){
-    ////TODO 
-    console.log(currentPlayer,'nextplayer,,,')
+    
     if(currentPlayer==1){
         $('#blinkingplayernametext').attr("id","playernametext1");
         currentPlayer = 2;
@@ -255,49 +249,3 @@ function playerBio(playerF){                         //assign face to the player
     }
 
 }
-
-
-//TROLOLO EVERY USED BUT DOESNT WORK SINCE YOU CAN TELL THE LETTER ONLY ONCE :/
-// var usedLetters = [];
-
-// function checkAnswer(){
-//     var isTheLetterInAnswer =0;
-//     if(answer.toUpperCase() === words[draw]) {                                      //IF final answer is correct...
-//         appendProperAnswer();
-//         roundWon();
-//         return 0;
-//     }
-
-//     if(answer.length>1) {                                                           //IF final answer is incorrect...
-//         window.alert('Wrong answer! Next player\'s turn'); 
-//         nextPlayer(); 
-//         return 0;
-//     }
-
-//     for (var i=0; i<lengthOfTheWord; i++){    console.log(properLetters,'properletteresa',words[draw].length);                  
-//         for (var i=0; i<lengthOfTheWord; i++){
-
-//             if (answer.toUpperCase() === words[draw][i] && usedLetters.every(wasTheLetterAlready)) {                         //If letter is in final word then show all boxes with particular letter
-//                 i=i+1;
-//                 $('#'+i+'l').html(answer.toUpperCase());
-//                 $('#'+i+'l').css("background-color","#efe4b0");
-//                 i=i-1;
-//                 isTheLetterInAnswer = 1;
-//                 properLetters = properLetters+ 1;
-//                 usedLetters.push(answer);
-//                 console.log(usedLetters,'uzyteliterkii')
-//         }
-//         if(properLetters == words[draw].length) roundWon();             //todo Roundwon // toDO 3x AAA in ala wins the game :( 
-//     }
-//        if(isTheLetterInAnswer == 1) return true;                                     //preventing returning true on letters that are not in answer
-//     }
-
-//     window.alert('Wrong letter! Next player\'s turn');                              //IF letter is not in final answer (none of above conditions is fulfilled)...
-//     nextPlayer();
-   
-
-// }
-
-// function wasTheLetterAlready(char){
-//     return char != answer;
-// }
