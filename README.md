@@ -1,5 +1,5 @@
-# wheeloffortune
-wheel of fortune
+# Wheel of Fortune
+
 
 Wheel of fortune game
 
